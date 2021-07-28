@@ -15,7 +15,7 @@ function palindromeChecker(dateArray){
     let dateString4 = date+month+Array.from(year).slice(2).join(''); //dd-mm-yy
        
     resultText.textContent ='';
-
+    
     if(dateString1 === Array.from(dateString1).reverse().join('')){
         isPalindrome();
     }else if(dateString2 === Array.from(dateString2).reverse().join('')){
@@ -28,6 +28,8 @@ function palindromeChecker(dateArray){
         notPalindrome();
         nearestPalindrome(dateArray);
     }
+    
+    
 
     // nearestPalindrome(dateArray);
 }
@@ -134,5 +136,8 @@ console.log('higher '+higherPalindrome+ ' : '+dayCounter2)
 
 checkBtn.addEventListener('click', () => {
     let dateArray = Array.from(dateInput.value.split('-'));
-    palindromeChecker(dateArray);
+    if(dateArray.length > 1){
+        palindromeChecker(dateArray);
+    }else resultText.textContent = "Please enter a date"
+
 })
