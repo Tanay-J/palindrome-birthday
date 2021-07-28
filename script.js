@@ -26,13 +26,18 @@ function palindromeChecker(dateArray){
         isPalindrome();
     }else {
         notPalindrome();
-        nearestPalindrome(dateArray);
+
+        closestDateText.innerHTML = '<img class="loading-img" src="/img/loading.svg">';
+        closestDate.textContent = '';
+        setTimeout(nearestPalindrome,2000,dateArray);
+        // nearestPalindrome(dateArray);
     }
     
     
 
     // nearestPalindrome(dateArray);
 }
+
 
 function isPalindrome(){
     if(closestDateText.textContent){
@@ -46,6 +51,7 @@ function notPalindrome(){
     
 }
 //issue: datecounter is not counting from input date, it is counting from 1st Jan because we are checking for palindrome from 1st Jan
+//issue: show nan-nan-nan for years<2002
 function nearestPalindrome(dateArray){
     let year = dateArray[0];
     let month = dateArray[1];

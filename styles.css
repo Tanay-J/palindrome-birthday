@@ -125,6 +125,10 @@ img{
     padding: 5px;
     margin: 1rem;
 }
+.loading-img{
+    height: 40px;
+    width: 40px;
+}
 .closest-date-text{
     padding-top: 10px;
 }
