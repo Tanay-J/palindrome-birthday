@@ -3,6 +3,7 @@ let checkBtn = document.querySelector('.button-two');
 let resultText = document.querySelector('.result-text');
 let closestDateText = document.querySelector('.closest-date-text');
 let closestDate = document.querySelector('.closest-date');
+let loading = document.querySelector('.loading-img');
 
 function reverseString(str){
     return str.split('').reverse().join('');
@@ -134,6 +135,7 @@ function nearestPalindrome(date){
 }
 
 function displayHandler(isPalindrome,nearestPalindrome){
+    loading.setAttribute('style','display:none;');
     if(isPalindrome){
         resultText.textContent = 'Your birthdate is a Palindrome';
         closestDateText.textContent = '';
@@ -154,7 +156,9 @@ checkBtn.addEventListener('click',() => {
     }
     let isPalindrome = palindromeChecker(date);
     let nearestPalObj = nearestPalindrome(date);
-    
-    displayHandler(isPalindrome, nearestPalObj);
+    loading.setAttribute('style','display:block;');
+    setTimeout(displayHandler,2000,isPalindrome,nearestPalObj);
+   
+    // displayHandler(isPalindrome, nearestPalObj);
 
 })

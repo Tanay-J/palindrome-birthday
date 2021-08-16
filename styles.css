@@ -99,7 +99,7 @@ img{
     text-align: center;
 }
 .input-sec{
-    height: 40vh;
+    height: 35vh;
 }
 .input-sec h3{
     color: var(--textDark);
@@ -123,11 +123,14 @@ img{
     color: var(--textDark);
     background-color: var(--backgroundLight);
     padding: 5px;
-    margin: 1rem;
+    /* margin: 1rem; */
 }
 .loading-img{
+    display: none;
     height: 40px;
     width: 40px;
+    margin: auto;
+    margin-bottom: 10px;
 }
 .closest-date-text{
     padding-top: 10px;
